@@ -2,32 +2,33 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Criptografia e Descriptografia</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 50px; }
-        .container { max-width: 600px; margin: auto; }
-        .error { color: red; }
-    </style>
+    <title>Criptografia e Descriptografia de Arquivos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Criptografia e Descriptografia de Arquivos</h1>
-        <form action="/process" method="post" enctype="multipart/form-data">
-            <label for="file">Escolha um arquivo:</label><br>
-            <input type="file" name="file" id="file" required><br><br>
+        <form action="/process" method="post" enctype="multipart/form-data" class="form-container">
+            <div class="form-group">
+                <label for="file">Escolha um arquivo:</label><br>
+                <input type="file" name="file" id="file" required class="input-file">
+            </div>
 
-            <label for="password">Senha:</label><br>
-            <input type="password" name="password" id="password" required><br><br>
+            <div class="form-group">
+                <label for="password">Senha:</label><br>
+                <input type="password" name="password" id="password" required class="input-text">
+            </div>
 
-            <label>Ação:</label><br>
-            <input type="radio" name="action" value="encrypt" id="encrypt" required>
-            <label for="encrypt">Criptografar</label>
-            <input type="radio" name="action" value="decrypt" id="decrypt">
-            <label for="decrypt">Descriptografar</label><br><br>
+            <div class="form-group">
+                <label>Ação:</label><br>
+                <input type="radio" name="action" value="encrypt" id="encrypt" required>
+                <label for="encrypt" class="radio-label">Criptografar</label>
+                <input type="radio" name="action" value="decrypt" id="decrypt">
+                <label for="decrypt" class="radio-label">Descriptografar</label>
+            </div>
 
-            <input type="submit" value="Processar">
+            <input type="submit" value="Processar" class="submit-button">
         </form>
     </div>
 </body>
 </html>
-
